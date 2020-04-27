@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import Recipe from "./Recipe"
 import './App.css';
 
 const App = () => {
 
   const query = `http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3`
 
+  const [recipes, setRecipes] = useState([]);
   
   useEffect(() => {
     get_recipes()
-  })
+  }, [])
 
   const get_recipes = async () => {
     const resp = await fetch(query);
     const data = await resp.json();
-    console.log(data)
+    setRecipes(data.results)
+    console.log(data.results)
   }
 
   return(
@@ -24,6 +27,9 @@ const App = () => {
           Search
         </button>
       </form>
+      {recipes.map(recipe =>(
+        <Recipe title={"title"} ingredients="Curry" thumbnails="http://img.recipepuppy.com/560556.jpg"/>
+      ))}
     </div>
   )
 }
