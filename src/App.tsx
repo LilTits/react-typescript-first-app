@@ -29,8 +29,9 @@ const App = () => {
         </button>
       </form>
       {recipes.map(recipe =>(
-        <Recipe title={recipe.title} ingredients={recipe.ingredients} thumbnail={recipe.thumbnail}/>
+        <Recipe key={recipe.title} title={recipe.title} ingredients={recipe.ingredients} thumbnail={recipe.thumbnail}/>
       ))}
+
       <div>
         <Counter>
           {(count, setCount) => (

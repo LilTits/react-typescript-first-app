@@ -1,6 +1,7 @@
 import React from "react";
 
 interface RecipeProps {
+    key?: number
     title: string;
     ingredients: string;
     thumbnail?: string;
