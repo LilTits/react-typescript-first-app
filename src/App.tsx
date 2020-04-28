@@ -6,7 +6,7 @@ const App = () => {
 
   const query = `http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3`
 
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState<React.DependencyList | never>([]);
   
   useEffect(() => {
     get_recipes()
@@ -28,7 +28,7 @@ const App = () => {
         </button>
       </form>
       {recipes.map(recipe =>(
-        <Recipe title={"title"} ingredients="Curry" thumbnails="http://img.recipepuppy.com/560556.jpg"/>
+        <Recipe title={recipe.title} ingredients={recipe.ingredients} thumbnail={recipe.thumbnail}/>
       ))}
     </div>
   )

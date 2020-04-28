@@ -3,19 +3,20 @@ import React from "react";
 interface RecipeProps {
     title: string;
     ingredients: string;
-    thumbnails?: string;
+    thumbnail?: string;
 }
 
 const Recipe: React.FC<RecipeProps> = ({
     title,
     ingredients,
-    thumbnails
+    thumbnail
 }) => {
     return(
         <div>
             <h1>{title}</h1>
             <p>{ingredients}</p>
-            <img src={thumbnails} alt="Thumbnails"/>
+            <img src={thumbnail} alt="Thumbnails"/>
+            <p>{thumbnail}</p>
         </div>
     )
 }
