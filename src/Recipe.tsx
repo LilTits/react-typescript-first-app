@@ -1,7 +1,7 @@
 import React from "react";
 
 interface RecipeProps {
-    key?: number
+    key: number
     title: string;
     ingredients: string;
     thumbnail: string;
@@ -17,7 +17,6 @@ const Recipe: React.FC<RecipeProps> = ({
             <h1>{title}</h1>
             <p>{ingredients}</p>
             <img src={thumbnail} alt="Thumbnails"/>
-            <p>{thumbnail}</p>
         </div>
     )
 }
