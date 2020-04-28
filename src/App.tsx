@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Recipe from "./Recipe"
+import Counter from "./Counter"
 import './App.css';
 
 const App = () => {
@@ -20,7 +21,7 @@ const App = () => {
   }
 
   return(
-    <div className="className">
+    <div className="App">
       <form className="search-form">
         <input className="search-input" type="text"/>
         <button className="search-button" type="submit">
@@ -30,6 +31,16 @@ const App = () => {
       {recipes.map(recipe =>(
         <Recipe title={recipe.title} ingredients={recipe.ingredients} thumbnail={recipe.thumbnail}/>
       ))}
+      <div>
+        <Counter>
+          {(count, setCount) => (
+            <div>
+              {count}
+              <button onClick={() => setCount(count+1)}>+</button>
+            </div>
+          )}
+        </Counter>
+      </div>
     </div>
   )
 }
