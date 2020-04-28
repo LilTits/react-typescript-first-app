@@ -8,6 +8,7 @@ const App = () => {
   const query = `http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3`
 
   const [recipes, setRecipes] = useState<React.DependencyList | never>([]);
+  // const [search, setSearch] = useState('');
   
   useEffect(() => {
     get_recipes()
@@ -19,10 +20,18 @@ const App = () => {
     setRecipes(data.results)
   }
 
+  // const updateSearch = (e: Event) => {
+  //   setSearch(e.target.value)
+  // }
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+  }
+
   return(
     <div className="App">
-      <form className="search-form">
-        <input className="search-input" type="text"/>
+      <form className="search-form" onSubmit={(e) => handleSubmit(e)}>
+        <input className="search-input" type="text" />
         <button className="search-button" type="submit">
           Search
         </button>
