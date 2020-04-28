@@ -17,7 +17,6 @@ const App = () => {
     const resp = await fetch(query);
     const data = await resp.json();
     setRecipes(data.results)
-    console.log(data.results)
   }
 
   return(
