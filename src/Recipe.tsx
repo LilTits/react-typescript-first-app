@@ -4,7 +4,7 @@ interface RecipeProps {
     key?: number
     title: string;
     ingredients: string;
-    thumbnail?: string;
+    thumbnail: string;
 }
 
 const Recipe: React.FC<RecipeProps> = ({
