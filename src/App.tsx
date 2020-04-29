@@ -5,9 +5,10 @@ import './App.css';
 
 const App = () => {
 
-  const myRecipe = "cookie"
+  const myRecipe = ""
   const myIngredients = [
-    ""
+    "chocolat",
+    "milk"
   ]
 
   const query = `http://www.recipepuppy.com/api/?i=${myIngredients}&q=${myRecipe}`
@@ -42,7 +43,7 @@ const App = () => {
         </button>
       </form>
       {recipes.map(recipe =>(
-        <Recipe key={recipe.title} title={recipe.title} ingredients={recipe.ingredients} thumbnail={recipe.thumbnail}/>
+        <Recipe key={recipe.title} title={recipe.title} ingredients={recipe.ingredients} thumbnail={recipe.thumbnail} link={recipe.href} />
       ))}
 
       <div>
