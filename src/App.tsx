@@ -5,7 +5,12 @@ import './App.css';
 
 const App = () => {
 
-  const query = `http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3`
+  const myRecipe = "cookie"
+  const myIngredients = [
+    ""
+  ]
+
+  const query = `http://www.recipepuppy.com/api/?i=${myIngredients}&q=${myRecipe}`
 
   const [recipes, setRecipes] = useState<React.DependencyList | never>([]);
   // const [search, setSearch] = useState('');
